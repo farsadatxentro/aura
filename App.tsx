@@ -72,7 +72,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black/10 flex items-center justify-center p-0 md:p-4">
+    <div className="min-h-screen flex items-center justify-center md:bg-black/10 md:p-4">
       {/* Mobile container constraint */}
       <div className="relative w-full h-[100dvh] md:h-[844px] max-w-md bg-white dark:bg-[#101922] shadow-2xl overflow-y-auto md:rounded-3xl">
         
