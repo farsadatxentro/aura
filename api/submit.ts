@@ -30,6 +30,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
     const mailOptions = {
@@ -61,9 +64,9 @@ Sent via ${appName}
 
   } catch (error: any) {
     console.error('API Error:', error);
-    return res.status(500).json({ 
-      error: 'Failed to send request', 
-      details: error instanceof Error ? error.message : 'Unknown error' 
+    return res.status(500).json({
+      error: 'Failed to send request',
+      details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }

@@ -11,9 +11,9 @@ const getEnv = (key: string, fallback: string) => {
 };
 
 export const config: AppConfig = {
-  hotelName: getEnv('APP_NAME', "Aura Boutique Hotel"),
-  logoUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGhlfIQDJTS1QVsimWUiKmv2g_-8Xkz3uj63FMj-4jPvKwCDL_Vo7h6EtgUUnvy6tgsSwBv8KXiLhXh0zWTXbLZ1MLZbDaGDMmvYnBJLGJPqv1iB7r7V_L2wmrhJqaBvlsq-gsDFvPs-uK_iXlgxmxjmp1JHCPC6NTb0B75T1Q3a1h5SZCDDyuioQDrvHyOFKyj7HUbztEjKOJLKiP_Q7GMeXllSkldIVkdOjS-8GfO9muJKUtZCWxVv0cFqn7eUgTBfdeyoehP9Rn",
-  heroImageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDB8WUJuPLwiKm15FYIyXJ6AlD_GkFQErdih-UvcBbqiDMJgSK3bCC1f60BN_DPkT22MvcLT0wQ7_7EFOv8nSxSn_0duUeT0y6L_lO4VX3Zgk67B4S7dgfYiWiwwv7YGwAWgXTrpmn9OxukfBOwNtfdEZTrr3MpAO4IjXC4vyKxo2p7z2cjF0itBNcv5eskJ6xPVQZ6VhQGrHCYXDO5ACwr94nVi-WdmASru5WGau70iHfdQyKiwdtYQtmP8En1c1PGlDo9GGBHiaSJ",
+  hotelName: process.env.APP_NAME,
+  logoUrl: "https://scontent.fauh1-1.fna.fbcdn.net/v/t39.30808-6/617139810_122106943695207110_1388925216869725631_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=DixH-IY1e0cQ7kNvwEq3LWT&_nc_oc=AdkVcbD7VJc5F4D6G7a6ZdhYXMJSLLZGZMECvmm6fiwnAAsVEoyGUD6RD9xKbE6G3RzvqnJtNR55y1-kNJldZmNW&_nc_zt=23&_nc_ht=scontent.fauh1-1.fna&_nc_gid=ysDd44K--aD3-gHwC_dB8g&oh=00_AftO0Ytc9Yv7HxPXPKJn1pEB7kljxaTwOqT09LY_KJNdDA&oe=6984F8F2",
+  heroImageUrl: "https://scontent.fdxb1-1.fna.fbcdn.net/v/t39.30808-6/617394458_122106944913207110_393823625194409968_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=MQ7PsCqhwo4Q7kNvwEayXAu&_nc_oc=AdmQkyNNXeGPW3mdDZNMT-9PZ0FDN8f3y4RgHtxLvzl-20XDDeO5owCqPxPH1ghargr2vjDOGs8SQR5AYBJtKPKy&_nc_zt=23&_nc_ht=scontent.fdxb1-1.fna&_nc_gid=3d3VTA5JCKa10dizF6pJdA&oh=00_Afsy3dbuXORUE4iRgF9929MkMMwb3I-w-c6r1UDtv5iVJA&oe=6985161B",
   languages: ['EN', 'ES', 'FR', 'DE'],
   
   categories: [
