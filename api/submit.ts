@@ -35,6 +35,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     });
 
+    const refId = '#' + Math.random().toString(36).substring(2, 7).toUpperCase();
+
     const mailOptions = {
       from: process.env.MAIL_FROM || process.env.MAIL_USER,
       to: process.env.MAIL_TO || process.env.MAIL_USER,
@@ -44,6 +46,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 New Guest Request received from ${appName}.
 
 ----------------------------------------
+REF:      ${refId}
 ROOM:     ${roomNumber}
 TYPE:     ${requestType}
 LANGUAGE: ${language}
@@ -60,7 +63,7 @@ Sent via ${appName}
     // Send Email
     await transporter.sendMail(mailOptions);
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, refId });
 
   } catch (error: any) {
     console.error('API Error:', error);

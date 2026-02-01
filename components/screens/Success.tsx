@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { config } from '../../config';
 import { Language } from '../../types';
 import { Button } from '../ui/Button';
@@ -6,16 +6,11 @@ import { Button } from '../ui/Button';
 interface Props {
   lang: Language;
   onReset: () => void;
+  refId: string;
 }
 
-export const Success: React.FC<Props> = ({ lang, onReset }) => {
+export const Success: React.FC<Props> = ({ lang, onReset, refId }) => {
   const t = config.translations[lang];
-  const [refId, setRefId] = useState('');
-
-  useEffect(() => {
-    // Generate random reference ID
-    setRefId('#' + Math.random().toString(36).substring(2, 7).toUpperCase());
-  }, []);
 
   return (
     <div className="flex flex-col h-full">

@@ -13,6 +13,7 @@ export default function App() {
   // Form Data
   const [roomNumber, setRoomNumber] = useState('');
   const [requestType, setRequestType] = useState('');
+  const [refId, setRefId] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Transitions
@@ -54,11 +55,13 @@ export default function App() {
             body: JSON.stringify(payload),
           });
 
+          const data = await response.json();
+
           if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Failed to submit request');
+            throw new Error(data.error || 'Failed to submit request');
           }
           
+          setRefId(data.refId);
           setScreen('SUCCESS');
       } catch (e) {
           console.error("Failed to send request", e);
@@ -108,6 +111,7 @@ export default function App() {
             <Success 
                 lang={lang} 
                 onReset={toWelcome} 
+                refId={refId}
             />
         )}
 
